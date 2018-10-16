@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:background="@color/color_00"
+    android:gravity="left">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/mChooseImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="7dp"
+            android:background="@drawable/selected_visiable_person" />
+
+
+        <TextView
+            android:id="@+id/mClinicNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:text="(本人)"
+            android:textColor="#a4a4a4"
+            android:textSize="17sp" />
+    </RelativeLayout>
+
+    <View
+        style="@style/line_diliver"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

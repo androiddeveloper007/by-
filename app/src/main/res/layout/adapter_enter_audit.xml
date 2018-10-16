@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    app:cardCornerRadius="4dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/certificateTitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="申请时间："
+                android:textColor="@color/color_main_gray"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/certificateTitleTimeText"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
+                android:textColor="@color/color_main_gray"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/certificateTitleStateIcon"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:gravity="center"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="待审核"
+                android:textColor="@color/color_red"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <View style="@style/line_diliver"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"
+                android:text="申请人"
+                android:textColor="@color/color_main_gray"
+                android:textSize="12sp" />
+
+            <com.bowen.commonlib.widget.CircleImageView
+                android:id="@+id/enterAuditDoctorImg"
+                android:layout_toLeftOf="@+id/enterAuditDoctorNameTv"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/doctor_default" />
+
+            <TextView
+                android:id="@+id/enterAuditDoctorNameTv"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="17dp"
+                android:text="***"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/color_main_gray"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/enterAuditDoctorLevelTv"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/enterAuditDoctorNameTv"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="3dp"
+                android:text="***"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/color_main_gray"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+
+        <View style="@style/line_diliver"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="医馆/科室"
+                android:textColor="@color/color_main_gray"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/hospitalTv"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="济风堂国医馆"
+                android:gravity="right"
+                android:textColor="@color/color_main_black"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/departmentTv"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:gravity="center"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="中医xx科"
+                android:textColor="@color/color_main_black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="right">
+            <TextView
+                android:id="@+id/rejectBtn"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:text="驳回"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/color_main"
+                android:background="@drawable/button_enter_audit_reject"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/passBtn"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:layout_marginRight="10dp"
+                android:text="通过"
+                android:textColor="@color/color_white"
+                android:background="@drawable/button_guide_enter"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

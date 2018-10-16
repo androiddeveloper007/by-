@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/guide_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/guide01" />
+
+    <TextView
+        android:id="@+id/guide_slogan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/guide_img"
+        android:layout_marginTop="60dp"
+        android:layout_centerHorizontal="true"
+        android:text="为每位中医师打造专属品牌"
+        android:textColor="#5785FF"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/mImmediateEnterTv"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:background="@drawable/button_guide"
+        android:text="立即体验"
+        android:textColor="@color/color_main"
+        android:textSize="17sp" />
+</RelativeLayout>

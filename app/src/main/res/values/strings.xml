@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">博医Doctor</string>
+    <string name="app_name_debug">博医Doctor(测试版)</string>
+    <string name="__leak_canary_display_activity_label">博医Doctor内存泄漏助手</string>
+    <string name="gaode_api_key">59dda7e5bfe993138067ceeb3813ed00</string>
+    <string name="umeng_appkey">5b8784e78f4a9d5146000373</string>
+    <string name="umeng_debug_appkey">5b878546b27b0a33de0003a7</string>
+    <string name="sharesdk_appkey">24b6e1b679b11</string>
+    <string name="sharesdk_appsecret">e7cae87b7b4508b743de586445d073d7</string>
+    <string name="prescription_detail_info">* 本平台只作为信息展示平台，并不保证该配方的疗效和用药安全。服用该偏方前请咨询医师</string>
+    <string name="band_card_info">* 以上填写的信息仅用于账户余额提现。为确保提现顺利到账，请填写的正确的绑卡信息，否则提现资金将无法到账。</string>
+</resources>

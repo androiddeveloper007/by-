@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    android:orientation="vertical">
+
+    <com.bowen.commonlib.widget.ActionTitleBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleViewVisible="true" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:visibility="gone"
+                android:id="@+id/certificateTitleLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="17dp"
+                app:cardCornerRadius="4dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/certificateTitleText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="提交时间："
+                        android:textColor="#253231"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/certificateTitleTimeText"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:textColor="#253231"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/certificateTitleStateIcon"
+                        android:layout_width="50dp"
+                        android:layout_height="25dp"
+                        android:gravity="center"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="待审核"
+                        android:textColor="#ffffff"
+                        android:background="@drawable/button_red"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="17dp"
+                app:cardCornerRadius="4dp"
+                app:cardUseCompatPadding="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingBottom="10dp">
+
+                    <TextView
+                        android:id="@+id/practiseCertificate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:drawableLeft="@drawable/occupation_certification"
+                        android:drawablePadding="6dp"
+                        android:gravity="center_vertical"
+                        android:text="上传医师执业证书"
+                        android:textColor="#253231"
+                        android:textSize="15sp" />
+
+                    <View
+                        style="@style/line_diliver"
+                        android:layout_below="@+id/practiseCertificate"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/uploadPracticeCertificatePage00"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_below="@+id/practiseCertificate"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/uploadPracticeCertificatePage01"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_below="@+id/practiseCertificate"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toRightOf="@+id/uploadPracticeCertificatePage00" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="17dp"
+                app:cardCornerRadius="4dp"
+                app:cardUseCompatPadding="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingBottom="10dp">
+
+                    <TextView
+                        android:id="@+id/qualityCertificate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:drawableLeft="@drawable/occupation_certification"
+                        android:drawablePadding="6dp"
+                        android:gravity="center_vertical"
+                        android:text="上传医师资格证书"
+                        android:textColor="#253231"
+                        android:textSize="15sp" />
+
+                    <View
+                        style="@style/line_diliver"
+                        android:layout_below="@+id/qualityCertificate"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/uploadQualityCertificatePage10"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_below="@+id/qualityCertificate"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/uploadQualityCertificatePage11"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_below="@+id/qualityCertificate"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toRightOf="@+id/uploadQualityCertificatePage10" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="17dp"
+                app:cardCornerRadius="4dp"
+                app:cardUseCompatPadding="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingBottom="10dp">
+
+                    <TextView
+                        android:id="@+id/professionCertificate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="20dp"
+                        android:drawableLeft="@drawable/technical_certificate"
+                        android:drawablePadding="6dp"
+                        android:gravity="center_vertical"
+                        android:text="上传专业技术资格证书"
+                        android:textColor="#253231"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center_vertical"
+                        android:text="非必填"
+                        android:textColor="#FF3636"
+                        android:textSize="12sp" />
+
+                    <View
+                        style="@style/line_diliver"
+                        android:layout_below="@+id/professionCertificate"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/uploadProfessionCertificatePage20"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_below="@+id/professionCertificate"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:id="@+id/qualityCertificateNextBtn"
+                android:layout_width="300dp"
+                android:layout_height="42dp"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="35dp"
+                android:background="@drawable/button_main"
+                android:gravity="center"
+                android:text="提交审核"
+                android:textColor="@color/color_white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/qualityCertificateLaterBtn"
+                android:layout_width="120dp"
+                android:layout_height="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="25dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="稍后再认证"
+                android:textColor="@color/color_main"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

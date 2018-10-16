@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="32dp"
+    android:background="#FFF5F5F5"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:drawableLeft="@drawable/withdraw_success"
+        android:drawablePadding="5dp"
+        android:text="成功"
+        android:textColor="@color/color_main_gray"
+        android:textSize="12sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:drawableLeft="@drawable/withdraw_fail"
+        android:drawablePadding="5dp"
+        android:text="失败"
+        android:textColor="@color/color_main_gray"
+        android:textSize="12sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:drawableLeft="@drawable/withdraw_wait"
+        android:drawablePadding="5dp"
+        android:text="申请中"
+        android:textColor="@color/color_main_gray"
+        android:textSize="12sp" />
+</LinearLayout>

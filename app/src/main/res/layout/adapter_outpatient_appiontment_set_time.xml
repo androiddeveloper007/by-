@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:background="@color/color_white">
+    <View
+        style="@style/line_diliver"></View>
+    <TextView
+        android:id="@+id/mTimePeriodTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:text="09:00~10:00"
+        android:textColor="@color/color_main_gray"
+        android:textSize="12sp" />
+
+    <EditText
+        android:id="@+id/mPeopleCountEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dp"
+        android:inputType="number"
+        android:background="@null"
+        android:gravity="center_vertical|right"
+        android:hint="请输入接诊人数"
+        android:text=""
+        android:maxLines="1"
+        android:textColor="@color/color_main_black"
+        android:textColorHint="#e3e3e3"
+        android:textSize="12sp" />
+
+</RelativeLayout>

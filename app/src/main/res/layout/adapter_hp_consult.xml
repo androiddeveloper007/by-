@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.bowen.doctor.common.widget.SwipeMenuLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mSwipeMenuLayout"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    android:layout_centerInParent="true"
+    android:orientation="horizontal"
+    app:content_id="@+id/contentLayout"
+    app:right_id="@+id/rightMenu">
+
+    <android.support.v7.widget.CardView
+    android:id="@+id/contentLayout"
+    android:layout_width="330dp"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="10dp"
+    app:cardCornerRadius="4dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.bowen.commonlib.widget.CircleImageView
+                android:id="@+id/mHeadPortraitImg"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/man" />
+
+            <TextView
+                android:id="@+id/mPatientNameTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/doctorImg"
+                android:layout_weight="1"
+                android:text="病人甲"
+                android:textColor="@color/color_main_black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/mTimeTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="06-22 12:00"
+                android:textColor="#B8B8B8"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/mConsultContentTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="22dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="7dp"
+            android:background="@android:color/white"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text=""
+            android:textColor="@color/color_main_black"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+    android:id="@+id/rightMenu"
+    android:layout_width="90dp"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="4dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="90dp"
+        android:layout_height="96dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/mDeleteTv"
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="删除"
+            android:textColor="@color/color_main_black"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</com.bowen.doctor.common.widget.SwipeMenuLayout>

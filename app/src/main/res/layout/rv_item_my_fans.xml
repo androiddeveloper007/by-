@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_white">
+
+    <com.bowen.commonlib.widget.CircleImageView
+        android:id="@+id/fanImg"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="18dp"
+        android:layout_marginLeft="25dp" />
+
+    <TextView
+        android:id="@+id/fanNameTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/fanImg"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:text="用户1"
+        android:textColor="@color/color_main_black"
+        android:textSize="14sp" />
+
+    <View style="@style/line_diliver"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@+id/fanImg"/>
+
+</RelativeLayout>

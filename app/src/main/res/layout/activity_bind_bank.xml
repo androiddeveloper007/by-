@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.bowen.commonlib.widget.ActionTitleBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleViewVisible="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:text="真实姓名"
+            android:textColor="@color/color_main_gray"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/bindCardNameTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="25dp"
+            android:ellipsize="end"
+            android:gravity="right"
+            android:maxLines="1"
+            android:textColor="@color/color_main_black"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <View
+        style="@style/line_diliver"
+        android:layout_width="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:text="身份证号"
+            android:textColor="@color/color_main_gray"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/idCardEdit"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="25dp"
+            android:background="@null"
+            android:gravity="right|center_vertical"
+            android:hint="请输入身份证号"
+            android:inputType="number"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="#253231"
+            android:textColorHint="@color/color_main_gray"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <View
+        style="@style/line_diliver"
+        android:layout_width="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:text="银行卡号"
+            android:textColor="@color/color_main_gray"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/bankCardEdit"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="25dp"
+            android:background="@null"
+            android:gravity="right|center_vertical"
+            android:hint="请输入银行卡号"
+            android:inputType="number"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="#253231"
+            android:textColorHint="@color/color_main_gray"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFF5F5F5">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/band_card_info"
+            android:textColor="@color/color_main_gray"
+            android:textSize="10.5sp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="20dp"
+            android:lineSpacingExtra="3dp"
+            android:letterSpacing="0.15"/>
+
+        <TextView
+            android:id="@+id/mSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginBottom="40dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/button_main"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:text="提交"
+            android:textColor="@color/color_white"
+            android:textSize="17sp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:background="@color/color_white">
+
+    <TextView
+        android:id="@+id/withdrawTitleTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:drawableLeft="@drawable/withdraw_wait"
+        android:drawablePadding="8dp"
+        android:text="提现"
+        android:textColor="@color/color_main_black"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/withdrawTimeTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="15dp"
+        android:text="2018.06.04"
+        android:textColor="@color/color_main_gray"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/withdrawAmountTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:text="560.00"
+        android:textColor="#FFFF3636"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/withdrawUsableTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="15dp"
+        android:text="余额 2000.00"
+        android:textColor="@color/color_main_gray"
+        android:textSize="12sp" />
+
+    <View
+        style="@style/line_diliver"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
+
+</RelativeLayout>

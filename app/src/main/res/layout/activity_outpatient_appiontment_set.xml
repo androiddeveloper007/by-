@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_main_bg"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical">
+
+    <com.bowen.commonlib.widget.ActionTitleBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleViewVisible="true" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/openService"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/color_white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:text="开启服务"
+                    android:textColor="@color/color_main_black"
+                    android:textSize="15sp" />
+
+                <com.bowen.commonlib.widget.SwitchButton
+                    android:id="@+id/mOpenServiceSwitchBtn"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:checked="false"
+                    app:kswTextOff="    "
+                    app:kswTextOn="    "
+                    app:kswTintColor="@color/color_main" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="关闭后，用户将不可在线预约门诊"
+                    android:textColor="@color/color_main_gray"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mServiceLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="77dp"
+                    android:background="@color/color_white"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="38dp"
+                        android:layout_marginLeft="15dp"
+                        android:drawableLeft="@drawable/service_setting"
+                        android:drawablePadding="10dp"
+                        android:gravity="center_vertical"
+                        android:text="服务设置"
+                        android:textColor="@color/color_main_black"
+                        android:textSize="15sp" />
+
+                    <View
+                        style="@style/line_diliver"
+                        android:layout_marginLeft="15dp"></View>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@color/color_white">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15dp"
+                            android:text="挂号费（元）"
+                            android:textColor="@color/color_main_gray"
+                            android:textSize="12sp" />
+
+                        <EditText
+                            android:id="@+id/mRegistFeeEditText"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="15dp"
+                            android:gravity="right"
+                            android:background="@null"
+                            android:hint="请填写金额，免费挂号请填写0"
+                            android:maxLines="1"
+                            android:textColor="@color/color_main_black"
+                            android:textColorHint="#e3e3e3"
+                            android:textSize="12sp" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:background="@color/color_white"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="15dp">
+
+                        <TextView
+                            android:id="@+id/mLastWeekTv"
+                            android:layout_width="56dp"
+                            android:layout_height="22dp"
+                            android:background="@drawable/button_main_05"
+                            android:gravity="center"
+                            android:text="上一周"
+                            android:textColor="@color/color_main"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/mNextWeekTv"
+                            android:layout_width="56dp"
+                            android:layout_height="22dp"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/button_main_05"
+                            android:gravity="center"
+                            android:text="下一周"
+                            android:textColor="@color/color_main"
+                            android:textSize="12sp" />
+                    </RelativeLayout>
+
+
+                    <com.bowen.doctor.common.widget.ReservationView
+                        android:id="@+id/mReservationView"
+                        android:layout_width="match_parent"
+                        android:layout_height="220dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginTop="15dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mTreatementLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@color/color_white">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15dp"
+                            android:text="是否接诊"
+                            android:textColor="@color/color_main_gray"
+                            android:textSize="12sp" />
+
+                        <com.bowen.commonlib.widget.SwitchButton
+                            android:id="@+id/mReceptionSwitchBtn"
+                            android:layout_width="40dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="15dp"
+                            android:checked="true"
+                            app:kswTextOff="    "
+                            app:kswTextOn="    "
+                            app:kswTintColor="@color/color_main" />
+                    </RelativeLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:text="关闭后，则表示所选时段不接诊"
+                            android:textColor="@color/color_main_gray"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/mReservationPeriodLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="38dp"
+                            android:background="@color/color_white">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="15dp"
+                                android:text="坐诊医馆"
+                                android:textColor="@color/color_main_gray"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/mChooseClinicTv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="15dp"
+                                android:drawablePadding="5dp"
+                                android:drawableRight="@drawable/arrow_right"
+                                android:text="请选择"
+                                android:textColor="@color/color_main_gray"
+                                android:textSize="12sp" />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/color_white"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="10dp"
+                                android:text="接诊人数设置"
+                                android:textColor="@color/color_main_black"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginRight="15dp"
+                                android:text="接诊人数指在该时段内最多可预约的人数，填写0则该时段不可预约"
+                                android:textColor="@color/color_main_gray"
+                                android:textSize="12sp" />
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="45dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginRight="15dp"
+                                android:background="@color/color_white">
+                                <View
+                                    style="@style/line_diliver"></View>
+                                <TextView
+                                    android:id="@+id/mTimePeriod01Tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="15dp"
+                                    android:text="09:00~10:00"
+                                    android:textColor="@color/color_main_gray"
+                                    android:textSize="12sp" />
+
+                                <EditText
+                                    android:id="@+id/mPeopleCount01EditText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="15dp"
+                                    android:inputType="number"
+                                    android:background="@null"
+                                    android:maxLength="2"
+                                    android:gravity="center_vertical|right"
+                                    android:hint="请输入接诊人数"
+                                    android:text=""
+                                    android:maxLines="1"
+                                    android:textColor="@color/color_main_black"
+                                    android:textColorHint="#e3e3e3"
+                                    android:textSize="12sp" />
+
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="45dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginRight="15dp"
+                                android:background="@color/color_white">
+                                <View
+                                    style="@style/line_diliver"></View>
+                                <TextView
+                                    android:id="@+id/mTimePeriod02Tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="15dp"
+                                    android:text="09:00~10:00"
+                                    android:textColor="@color/color_main_gray"
+                                    android:textSize="12sp" />
+
+                                <EditText
+                                    android:id="@+id/mPeopleCount02EditText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="15dp"
+                                    android:inputType="number"
+                                    android:background="@null"
+                                    android:gravity="center_vertical|right"
+                                    android:hint="请输入接诊人数"
+                                    android:maxLength="2"
+                                    android:text=""
+                                    android:maxLines="1"
+                                    android:textColor="@color/color_main_black"
+                                    android:textColorHint="#e3e3e3"
+                                    android:textSize="12sp" />
+
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="45dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginRight="15dp"
+                                android:background="@color/color_white">
+                                <View
+                                    style="@style/line_diliver"></View>
+                                <TextView
+                                    android:id="@+id/mTimePeriod03Tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="15dp"
+                                    android:text="09:00~10:00"
+                                    android:textColor="@color/color_main_gray"
+                                    android:textSize="12sp" />
+
+                                <EditText
+                                    android:id="@+id/mPeopleCount03EditText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="15dp"
+                                    android:inputType="number"
+                                    android:background="@null"
+                                    android:maxLength="2"
+                                    android:gravity="center_vertical|right"
+                                    android:hint="请输入接诊人数"
+                                    android:text=""
+                                    android:maxLines="1"
+                                    android:textColor="@color/color_main_black"
+                                    android:textColorHint="#e3e3e3"
+                                    android:textSize="12sp" />
+
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="45dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginRight="15dp"
+                                android:background="@color/color_white">
+                                <View
+                                    style="@style/line_diliver"></View>
+                                <TextView
+                                    android:id="@+id/mTimePeriod04Tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="15dp"
+                                    android:text="09:00~10:00"
+                                    android:textColor="@color/color_main_gray"
+                                    android:textSize="12sp" />
+
+                                <EditText
+                                    android:id="@+id/mPeopleCount04EditText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="15dp"
+                                    android:inputType="number"
+                                    android:maxLength="2"
+                                    android:background="@null"
+                                    android:gravity="center_vertical|right"
+                                    android:hint="请输入接诊人数"
+                                    android:text=""
+                                    android:maxLines="1"
+                                    android:textColor="@color/color_main_black"
+                                    android:textColorHint="#e3e3e3"
+                                    android:textSize="12sp" />
+
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="45dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginRight="15dp"
+                                android:background="@color/color_white">
+                                <View
+                                    style="@style/line_diliver"></View>
+                                <TextView
+                                    android:id="@+id/mTimePeriod05Tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="15dp"
+                                    android:text="09:00~10:00"
+                                    android:textColor="@color/color_main_gray"
+                                    android:textSize="12sp" />
+
+                                <EditText
+                                    android:id="@+id/mPeopleCount05EditText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="15dp"
+                                    android:inputType="number"
+                                    android:background="@null"
+                                    android:maxLength="2"
+                                    android:gravity="center_vertical|right"
+                                    android:hint="请输入接诊人数"
+                                    android:text=""
+                                    android:maxLines="1"
+                                    android:textColor="@color/color_main_black"
+                                    android:textColorHint="#e3e3e3"
+                                    android:textSize="12sp" />
+
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="45dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginRight="15dp"
+                                android:background="@color/color_white">
+                                <View
+                                    style="@style/line_diliver"></View>
+                                <TextView
+                                    android:id="@+id/mTimePeriod06Tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="15dp"
+                                    android:text="09:00~10:00"
+                                    android:textColor="@color/color_main_gray"
+                                    android:textSize="12sp" />
+
+                                <EditText
+                                    android:id="@+id/mPeopleCount06EditText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="15dp"
+                                    android:inputType="number"
+                                    android:maxLength="2"
+                                    android:background="@null"
+                                    android:gravity="center_vertical|right"
+                                    android:hint="请输入接诊人数"
+                                    android:text=""
+                                    android:maxLines="1"
+                                    android:textColor="@color/color_main_black"
+                                    android:textColorHint="#e3e3e3"
+                                    android:textSize="12sp" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

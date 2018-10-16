@@ -1,0 +1,1 @@
+include ':app', ':commonlib', ':camera', ':gallery', ':ptr-lib', ':ptr-lib', ':ptr-lib'

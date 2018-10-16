@@ -1,0 +1,226 @@
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+apply plugin: 'com.mob.sdk'
+
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+    defaultConfig {
+        applicationId "com.bowen.doctor"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+    }
+    //签名配置
+    signingConfigs {
+        debug {
+            storeFile file("E:\\bowen_loan.jks")
+            storePassword "bowen861idb"
+            keyAlias "BoWenLoan"
+            keyPassword "bowen861idb"
+            v2SigningEnabled false
+        }
+
+        release {
+            storeFile file("E:\\bowen_loan.jks")
+            storePassword "bowen861idb"
+            keyAlias "BoWenLoan"
+            keyPassword "bowen861idb"
+            v2SigningEnabled false
+        }
+    }
+
+    buildTypes {
+        debug {
+            //Zipalign优化
+            zipAlignEnabled true
+            //移除无用的resource文件
+            shrinkResources false
+            signingConfig signingConfigs.debug
+            //代码混淆
+            minifyEnabled false
+            proguardFiles 'proguard-rules.pro'
+        }
+        release {
+            //Zipalign优化
+            zipAlignEnabled true
+            //移除无用的resource文件
+            shrinkResources true
+            signingConfig signingConfigs.release
+            //代码混淆
+            minifyEnabled true
+            proguardFiles 'proguard-rules.pro'
+        }
+    }
+    flavorDimensions "BoWen"
+    productFlavors {
+        Bowen_debug { //测试版
+            applicationId "com.bowen.doctor"
+            versionCode 13
+            versionName "1.0.0"
+            dimension "BoWen"
+            manifestPlaceholders = [
+                    APP_NAME     : "@string/app_name_debug",
+                    GAODE_API_KEY: "@string/gaode_api_key",
+                    MOB_APPKEY   : "@string/sharesdk_appkey",
+                    MOB_APPSECRET: "@string/sharesdk_appsecret",
+                    UMENG_APPKEY : "@string/umeng_debug_appkey",
+                    UMENG_CHANNEL: "Bowen"
+            ]
+            signingConfig signingConfigs.debug
+        }
+
+        Main {
+            applicationId "com.bowen.doctor"
+            versionCode 3
+            versionName "1.0.0"
+            dimension "BoWen"
+            manifestPlaceholders = [
+                    APP_NAME     : "@string/app_name",
+                    GAODE_API_KEY: "@string/gaode_api_key",
+                    MOB_APPKEY   : "@string/sharesdk_appkey",
+                    MOB_APPSECRET: "@string/sharesdk_appsecret",
+                    UMENG_APPKEY : "@string/umeng_appkey",
+                    UMENG_CHANNEL: "Bowen"
+            ]
+            signingConfig signingConfigs.release
+        }
+
+        Tencent {
+            applicationId "com.bowen.doctor"
+            versionCode 1
+            versionName "1.0.0"
+            dimension "BoWen"
+            manifestPlaceholders = [
+                    APP_NAME     : "@string/app_name",
+                    GAODE_API_KEY: "@string/gaode_api_key",
+                    MOB_APPKEY   : "@string/sharesdk_appkey",
+                    MOB_APPSECRET: "@string/sharesdk_appsecret",
+                    UMENG_APPKEY : "@string/umeng_appkey",
+                    UMENG_CHANNEL: "应用宝"
+            ]
+            signingConfig signingConfigs.release
+        }
+    }
+
+    MobSDK {
+        appKey "24b6e1b679b11"
+        appSecret "e7cae87b7b4508b743de586445d073d7"
+
+        ShareSDK {
+            //平台配置信息
+            devInfo {
+                Wechat {
+                    appId "wxee29e64967788933"
+                    appSecret "85478e445b468a9338b0bc9c7f85a489"
+                    bypassApproval false
+                }
+                WechatMoments {
+                    appId "wxee29e64967788933"
+                    appSecret "85478e445b468a9338b0bc9c7f85a489"
+                    bypassApproval false
+                }
+                QQ {
+                    appId "1106831980"
+                    appKey "xTrJUQ0hnxL3Kias"
+                    bypassApproval false
+                    shareByAppClient true
+                }
+                SinaWeibo {
+                    appKey "3215108680"
+                    appSecret "890d12482afacf4ca303b3e6d7627fde"
+                    shareByAppClient true
+                }
+            }
+        }
+    }
+
+    //输出Apk
+    applicationVariants.all { variant -> ;
+        def appName
+        if (variant.buildType.name == "release") {
+            appName = "BowenDoctor"
+        } else {
+            appName = "BowenDoctor"
+        }
+        def suffix = ""
+        variant.outputs.each { output -> ;
+            def apkName
+            if (variant.buildType.name == "release") {
+                apkName = "${appName}_${variant.productFlavors[0].name}_release_v${variant.versionName}.${variant.versionCode}_${BuildVersionSuffix()}${suffix}.apk"
+            } else {
+                apkName = "${appName}_debug_v${variant.versionName}.${variant.versionCode}_${BuildVersionSuffix()}${suffix}.apk"
+            }
+            output.outputFileName = apkName
+        }
+    }
+
+    dexOptions {
+        preDexLibraries = false
+//        incremental true
+        javaMaxHeapSize "4g"
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // set to true to turn off analysis progress reporting by lint
+        quiet true
+        // if true, stop the gradle build if errors are found
+        abortOnError false
+        // if true, only report errors
+        ignoreWarnings true
+    }
+
+    greendao{
+        targetGenDir 'src/main/java'
+        daoPackage 'com.bowen.doctor.common.database.gen'
+        schemaVersion 2
+    }
+}
+
+def BuildVersionSuffix() {
+    Date now = new Date();
+    DateFormat df = new SimpleDateFormat("yyyyMMddHHmm");
+    String date = df.format(now);
+    return Long.parseLong(date);
+}
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation lib_appcompat
+    implementation lib_recyclerview
+    implementation lib_glide
+    implementation 'com.android.support:design:26.1.0'
+    implementation 'com.android.support:cardview-v7:26.1.0'
+    testImplementation 'junit:junit:4.12'
+    implementation 'org.greenrobot:eventbus:3.0.0'
+    implementation 'com.jakewharton:butterknife:8.4.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    implementation 'com.umeng.analytics:analytics:latest.integration'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.3'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.3'
+    implementation 'org.greenrobot:greendao:3.2.0'
+    implementation project(':commonlib')
+    implementation project(':camera')
+    implementation project(':gallery')
+    implementation project(':ptr-lib')
+    implementation files('libs/AMapSearch_3.6.1_AMapLocation_3.2.0_20161205.jar')
+    implementation files('libs/asmack-android-7.jar')
+    implementation files('libs/BASE64Decoder.jar')
+}
